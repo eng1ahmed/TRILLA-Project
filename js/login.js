@@ -13,5 +13,5 @@ loginForm.onsubmit = function(){
 }
 console.log(window.location.pathname);
 btn.onclick = function(){
- window.location.pathname = "/html/page.html";
+ window.location.pathname = "/TRILLA-Project/html/page.html";
 }
