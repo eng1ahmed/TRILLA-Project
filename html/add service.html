@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add services</title>
+    <style>
+        #pname,
+#price,
+#imgsrc {
+  display: inline-flex;
+  border-radius: 8px;
+  font-family: cursive;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#btn {
+  border-radius: 8px;
+  font-family: cursive;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+#btn:hover {
+  background: white;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="ENTER NAME HERE" id="pname" required />
+    <input type="number" placeholder="ENTER price HERE" id="price" required />
+    <input
+      type="text"
+      placeholder="ENTER IMAGE SOURCE HERE"
+      id="imgsrc"
+      required
+    />
+
+    <input type="submit" value="ADD PRODUCT" id="btn" />
+    <script src="js/main.js"></script>
+  </body>
+</html>
