@@ -9,6 +9,7 @@ let li = document.querySelector("nav ul");
 li.classList.add("none");
 menu.onclick = function () {
   li.classList.toggle("none");
+  menu.style.color = "rgb(0, 165, 55)";
   //  li.style.position = "absloute"
 
 };
