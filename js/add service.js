@@ -7,6 +7,7 @@ menu.onclick = function () {
 };
 
 let i;
+
 //get
   let imgsrc = localStorage.imgsrc.split(",");
   let title = localStorage.title.split(",");
