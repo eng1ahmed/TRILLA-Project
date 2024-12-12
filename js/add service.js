@@ -8,7 +8,6 @@ menu.onclick = function () {
 
 let i = 0;
 
-
 //get
 let imgsrc = localStorage.imgsrc.split(",");
 let title = localStorage.title.split(",");
@@ -53,40 +52,33 @@ class addProduct {
     // content.append(cancel);
   }
 }
-addform.onsubmit = function () {
-  imgsrc.push(inpimg.value);
-  title.push(inptitle.value);
-  price.push(inpprice.value);
-  description.push(inpdescription.value);
+addform.onsubmit = function (event) {
   //set
+  event.preventDefault();
   localStorage.imgsrc = imgsrc;
   localStorage.title = title;
   localStorage.price = price;
   localStorage.description = description;
-  for (i = 0; i < price.length; i++) {
+  imgsrc.push(inpimg.value);
+  title.push(inptitle.value);
+  price.push(inpprice.value);
+  description.push(inpdescription.value);
+  // let MyRequest = new XMLHttpRequest();
+  // MyRequest.open("GET", "../json/data.json");
+  // MyRequest.send();
+  // MyRequest.onreadystatechange = function () {
+  //   if (this.readyState === 4 && this.status === 200) {
+  //     let jsData = JSON.parse(this.responseText);
+  //     for (i = 0; i < price.length; i++) {
+  //       jsData[i].imgsrc = localStorage.imgsrc.split(",");
+  //       jsData[i].title = localStorage.title.split(",");
+  //       jsData[i].price = localStorage.price.split(",");
+  //       jsData[i].description = localStorage.description.split(",");
+  //       console.log(jsData[i]);
+  //     }
+  //   }
+  // }
+};
+for (i = 0; i < price.length; i++) {
   new addProduct(imgsrc[i], title[i], price[i], description[i]);
 }
-
-};
-  for (i = 0; i < price.length; i++) {
-    new addProduct(imgsrc[i], title[i], price[i], description[i]);
-  }
-
-
-
-// let MyRequest = new XMLHttpRequest();
-// MyRequest.open("GET", "../json/data.json");
-// MyRequest.send();
-// MyRequest.onreadystatechange = function () {
-//   if (this.readyState === 4 && this.status === 200) {
-//     let jsData = JSON.parse(this.responseText);
-//     console.log(jsData);
-//     for (i = 0; i < price.length; i++) {
-//       jsData[i].imgsrc = localStorage.imgsrc.split(",");
-//       jsData[i].title = localStorage.title.split(",");
-//       jsData[i].price = localStorage.price.split(",");
-//       jsData[i].description = localStorage.description.split(",");
-//       console.log(jsData[i]);
-//     }
-//   }
-// };

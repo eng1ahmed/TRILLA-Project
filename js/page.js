@@ -12,11 +12,11 @@ menu.onclick = function () {
   menu.style.color = "rgb(0, 165, 55)";
   //  li.style.position = "absloute"
 };
-localStorage.imgsrc =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
-localStorage.title = "MY LAMBORJINI";
-localStorage.price = 200;
-localStorage.description = "THIS IS MY LAMBORJINI";
+// localStorage.imgsrc =
+//   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
+// localStorage.title = "MY LAMBORJINI";
+// localStorage.price = 200;
+// localStorage.description = "THIS IS MY LAMBORJINI";
 
 let imgsrc = localStorage.imgsrc.split(",");
 let title = localStorage.title.split(",");
