@@ -52,9 +52,9 @@ class addProduct {
     // content.append(cancel);
   }
 }
-addform.onsubmit = function (event) {
+addform.onsubmit = function () {
   //set
-  event.preventDefault();
+  // event.preventDefault();
   localStorage.imgsrc = imgsrc;
   localStorage.title = title;
   localStorage.price = price;
