@@ -21,6 +21,11 @@ let description  ;
    description = localStorage.description.split(",");
 
 
+   localStorage.imgsrc =
+     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
+   localStorage.title = "MY LAMBORJINI";
+   localStorage.price = 200;
+   localStorage.description = "THIS IS MY LAMBORJINI";
   //save it into variables
   let btn = document.getElementById("addp");
 let addform = document.getElementById("addpr");
@@ -29,11 +34,6 @@ let inptitle = document.getElementById("inptitle");
 let inpprice = document.getElementById("inpprice");
 let inpdescription = document.getElementById("inpdescription");
 // addPr
-localStorage.imgsrc =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
-localStorage.title = "MY LAMBORJINI";
-localStorage.price = 200;
-localStorage.description = "THIS IS MY LAMBORJINI";
 
 class addProduct {
   constructor(image, productName, price, description) {
@@ -79,8 +79,8 @@ addform.onsubmit = function (event) {
 for (i =0; i < price.length; i++) {
   new addProduct(imgsrc[i], title[i], price[i], description[i]);
 }  
-console.log(document.getElementById(`product0`));
-// let del = document.getElementById("delete");
-// del.onclick = function (){
-// localStorage.imgsrc[i] = null
-// }
+// console.log(document.getElementById(`product0`));
+// // let del = document.getElementById("delete");
+// // del.onclick = function (){
+// // localStorage.imgsrc[i] = null
+// // }
