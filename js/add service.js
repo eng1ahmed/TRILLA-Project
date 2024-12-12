@@ -6,23 +6,17 @@ menu.onclick = function () {
   menu.style.color = "rgb(0, 165, 55)";
 };
 
-let i;
-localStorage.imgsrc =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
-localStorage.title = "MY LAMBORJINI";
-localStorage.price = 200;
-localStorage.description = "THIS IS MY LAMBORJINI";
+let i = 0;
 
 
 //get
- let  imgsrc = localStorage.imgsrc.split(","); ;
- let  title = localStorage.title.split(",");
- let  price = localStorage.price.split(",");
- let  description = localStorage.description.split(",");
+let imgsrc = localStorage.imgsrc.split(",");
+let title = localStorage.title.split(",");
+let price = localStorage.price.split(",");
+let description = localStorage.description.split(",");
 
-
-  //save it into variables
-  let btn = document.getElementById("addp");
+//save it into variables
+let btn = document.getElementById("addp");
 let addform = document.getElementById("addpr");
 let inpimg = document.getElementById("addimg");
 let inptitle = document.getElementById("inptitle");
@@ -58,24 +52,41 @@ class addProduct {
     // cancel.id = "delete";
     // content.append(cancel);
   }
-}  
-addform.onsubmit = function (event) {
-    imgsrc.push(inpimg.value);
-    title.push(inptitle.value);
-    price.push(inpprice.value);
-    description.push(inpdescription.value);
-    //set
-    localStorage.setItem("imgsrc", imgsrc);
-    localStorage.setItem("title", title);
-    localStorage.setItem("price", price);
-    localStorage.setItem("description", description);
-  };
-
-for (i =0; i < price.length; i++) {
+}
+addform.onsubmit = function () {
+  imgsrc.push(inpimg.value);
+  title.push(inptitle.value);
+  price.push(inpprice.value);
+  description.push(inpdescription.value);
+  //set
+  localStorage.imgsrc = imgsrc;
+  localStorage.title = title;
+  localStorage.price = price;
+  localStorage.description = description;
+  for (i = 0; i < price.length; i++) {
   new addProduct(imgsrc[i], title[i], price[i], description[i]);
-}  
-// console.log(document.getElementById(`product0`));
-// // let del = document.getElementById("delete");
-// // del.onclick = function (){
-// // localStorage.imgsrc[i] = null
-// // }
+}
+
+};
+  for (i = 0; i < price.length; i++) {
+    new addProduct(imgsrc[i], title[i], price[i], description[i]);
+  }
+
+
+
+// let MyRequest = new XMLHttpRequest();
+// MyRequest.open("GET", "../json/data.json");
+// MyRequest.send();
+// MyRequest.onreadystatechange = function () {
+//   if (this.readyState === 4 && this.status === 200) {
+//     let jsData = JSON.parse(this.responseText);
+//     console.log(jsData);
+//     for (i = 0; i < price.length; i++) {
+//       jsData[i].imgsrc = localStorage.imgsrc.split(",");
+//       jsData[i].title = localStorage.title.split(",");
+//       jsData[i].price = localStorage.price.split(",");
+//       jsData[i].description = localStorage.description.split(",");
+//       console.log(jsData[i]);
+//     }
+//   }
+// };
