@@ -16,16 +16,12 @@ let imgsrc = localStorage.imgsrc.split(",");
 let title = localStorage.title.split(",");
 let price = localStorage.price.split(",");
 let description = localStorage.description.split(",");
-
-imgsrc.push(
+localStorage.imgsrc = (
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s"
 );
-title.push("MY LAMBORJINI");
-price.push(20000);
-description.push("THIS IS MY LAMBORJINI");
 class addProduct {
   constructor(image, productName, price, description) {
-    let allproducts = document.getElementById("allp");
+    let allproducts = document.getElementById("allp")
     let product = document.createElement("div");
     let content = document.createElement("div");
     content.id = "content";
@@ -48,6 +44,11 @@ class addProduct {
     content.appendChild(descrip);
   }
 }
+localStorage.imgsrc =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
+localStorage.title = "MY LAMBORJINI";
+localStorage.price = 200;
+localStorage.description = "THIS IS MY LAMBORJINI";
 for (i = 0; i < price.length; i++) {
   new addProduct(imgsrc[i], title[i], price[i], description[i]);
 }
