@@ -1,3 +1,4 @@
+
 let wellcome = document.querySelector("#wellcome");
 wellcome.innerHTML = `WellCome ${localStorage
   .getItem("userName")
@@ -11,14 +12,17 @@ menu.onclick = function () {
   menu.style.color = "rgb(0, 165, 55)";
   //  li.style.position = "absloute"
 };
+localStorage.imgsrc =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
+localStorage.title = "MY LAMBORJINI";
+localStorage.price = 200;
+localStorage.description = "THIS IS MY LAMBORJINI";
 
 let imgsrc = localStorage.imgsrc.split(",");
 let title = localStorage.title.split(",");
 let price = localStorage.price.split(",");
 let description = localStorage.description.split(",");
-localStorage.imgsrc = (
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s"
-);
+
 class addProduct {
   constructor(image, productName, price, description) {
     let allproducts = document.getElementById("allp")
@@ -44,11 +48,6 @@ class addProduct {
     content.appendChild(descrip);
   }
 }
-localStorage.imgsrc =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
-localStorage.title = "MY LAMBORJINI";
-localStorage.price = 200;
-localStorage.description = "THIS IS MY LAMBORJINI";
 for (i = 0; i < price.length; i++) {
   new addProduct(imgsrc[i], title[i], price[i], description[i]);
 }

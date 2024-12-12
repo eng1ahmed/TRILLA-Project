@@ -7,25 +7,20 @@ menu.onclick = function () {
 };
 
 let i;
-
-let imgsrc  ;
-let title ;
-let price  ;
-let description  ;
+localStorage.imgsrc =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
+localStorage.title = "MY LAMBORJINI";
+localStorage.price = 200;
+localStorage.description = "THIS IS MY LAMBORJINI";
 
 
 //get
-   imgsrc = localStorage.imgsrc.split(",");
-   title = localStorage.title.split(",");
-   price = localStorage.price.split(",");
-   description = localStorage.description.split(",");
+ let  imgsrc = localStorage.imgsrc.split(","); ;
+ let  title = localStorage.title.split(",");
+ let  price = localStorage.price.split(",");
+ let  description = localStorage.description.split(",");
 
 
-   localStorage.imgsrc =
-     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4d392_EM-K1OS296AAu67ggisJUqZ8UrIw&s";
-   localStorage.title = "MY LAMBORJINI";
-   localStorage.price = 200;
-   localStorage.description = "THIS IS MY LAMBORJINI";
   //save it into variables
   let btn = document.getElementById("addp");
 let addform = document.getElementById("addpr");
