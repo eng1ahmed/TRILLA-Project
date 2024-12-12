@@ -126,6 +126,9 @@
         color: white;
         background-color:rgb(0, 165, 55) ;
         cursor: pointer;
+        padding: 10px;
+        border: none;
+        width: 100%;
       }
       #Addp:hover{
 background-color: rgba(0, 165, 55, 0.63);
@@ -146,20 +149,22 @@ cursor: pointer;
       width: 100%;
       height: 300px;
       display: flex;
-      background-color: rgb(0, 165, 55);
+      background-color: rgb(4, 131, 35);
       flex-direction: column;
       border-radius: 12px;
       padding: 10px;
+      /* min-height: 300px; */
     }
     .product img {
       width: 100%;
       border-radius: inherit;
-      height: 200px;
+      max-height: 150px;
     }
     #content {
       width: 100%;
       padding: 10px;
       color: white;
+      position: relative;
     }
     #content::before {
       content: "";
@@ -170,6 +175,16 @@ cursor: pointer;
     #price {
       padding-top: 10px;
       padding-bottom: 10px;
+    }
+        #delete{
+      position:absolute;
+      top: 10px;
+      left: -6px;
+      padding: 10px;
+      background-color: rgb(255, 0, 0);
+      color: white;
+      border: none;
+      border-radius: 50%;
     }
     </style>
   </head>
@@ -206,15 +221,15 @@ cursor: pointer;
     </header>
     <h2 id="disc">Add Service / Car</h2>
     <form action="" id="addpr">
-      <label for="addimg">Add img Here</label>
-      <input type="url" name="addimg" id="addimg"/>
+      <label for="addimg">Add img URL Here</label>
+      <input type="url" name="addimg" id="addimg" required/>
       <label for="inptitle">Add Title Here</label>
-      <input type="text" name="" id="inptitle" placeholder="Add title" />
+      <input type="text" name="" id="inptitle" placeholder="Add title" required/>
       <label for="inpprice">Add Price Here</label>
-      <input type="number" name="" id="inpprice" placeholder="Add Price Here" />
+      <input type="number" name="" id="inpprice" placeholder="Add Price Here" required />
       <label for="inpprice">Add Description Here</label>
-      <input type="text" name="" id="inpdescription" placeholder="Add Description Here" />
-      <input type="submit" value="Add" id="Addp">
+      <input type="text" name="" id="inpdescription" placeholder="Add Description Here" required/>
+      <button type="submit" id ="Addp">Add</button>
     </form>
       
     <div id="allp"></div>

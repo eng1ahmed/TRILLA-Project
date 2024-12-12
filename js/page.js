@@ -12,10 +12,12 @@ menu.onclick = function () {
   //  li.style.position = "absloute"
 
 };
-let imgsrc = [localStorage.imgsrc.split(",")];
-let title = [localStorage.title.split(",")];
-let price = [localStorage.price.split(",")];
-let description = [localStorage.description.split(",")];
+
+let imgsrc = localStorage.imgsrc.split(",");
+let title = localStorage.title.split(",");
+let price = localStorage.price.split(",");
+let description = localStorage.description.split(",");
+
 class addProduct {
   constructor(image, productName, price, description) {
     let allproducts = document.getElementById("allp");
@@ -41,7 +43,7 @@ class addProduct {
     content.appendChild(descrip);
   }
 }
-let z;
-for (z = 0; z < title[0].length; z++) {
-  new addProduct(imgsrc[0][z], title[0][z], price[0][z], description[0][z]);
+for (i = 0; i < price.length; i++) {
+  new addProduct(imgsrc[i], title[i], price[i], description[i]);
 }
+console.log(i);

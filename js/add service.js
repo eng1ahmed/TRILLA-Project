@@ -5,16 +5,24 @@ menu.onclick = function () {
   li.classList.toggle("none");
   menu.style.color = "rgb(0, 165, 55)";
 };
-let imgsrc = [localStorage.imgsrc];
-let title = [localStorage.title.split(",")];
-let price = [localStorage.price.split(",")];
-let description = [localStorage.description.split(",")];
+
+let i;
+//get
+  let imgsrc = localStorage.imgsrc.split(",");
+  let title = localStorage.title.split(",");
+  let price = localStorage.price.split(",");
+  let description = localStorage.description.split(",");
+
+  console.log(localStorage.getItem("title"));
+  //save it into variables
 let btn = document.getElementById("addp");
 let addform = document.getElementById("addpr");
 let inpimg = document.getElementById("addimg");
 let inptitle = document.getElementById("inptitle");
 let inpprice = document.getElementById("inpprice");
 let inpdescription = document.getElementById("inpdescription");
+// addPr
+
 class addProduct {
   constructor(image, productName, price, description) {
     let allproducts = document.getElementById("allp");
@@ -22,7 +30,7 @@ class addProduct {
     let content = document.createElement("div");
     content.id = "content";
     product.classList.add("product");
-    product.id = `product `;
+    product.id = `product${i}`;
     allproducts.appendChild(product);
     let imgg = document.createElement("img");
     imgg.src = `${image}`;
@@ -38,22 +46,29 @@ class addProduct {
     let descrip = document.createElement("h3");
     descrip.innerText = `Description : ${description}`;
     content.appendChild(descrip);
+    let cancel = document.createElement("button");
+    // cancel.innerText = "X";
+    // cancel.id = "delete";
+    // content.append(cancel);
   }
 }
 addform.onsubmit = function (event) {
-    event.preventDefault();
-//   new addProduct(inpimg,inptitle,inpprice,inpdescription);
   imgsrc.push(inpimg.value);
   title.push(inptitle.value);
   price.push(inpprice.value);
   description.push(inpdescription.value);
-  
-  localStorage.imgsrc = imgsrc;
-  localStorage.title = title;
-  localStorage.price = price;
-  localStorage.description = description;
+  //set
+  localStorage.setItem("imgsrc", imgsrc);
+  localStorage.setItem("title", title);
+  localStorage.setItem("price", price);
+  localStorage.setItem("description", description);
 };
-let z ;
- for (z = 0; z < title[0].length; z++) {
-      new addProduct(imgsrc[0][z], title[0][z], price[0][z], description[0][z]);
-    }
+
+for (i =0; i < price.length; i++) {
+  new addProduct(imgsrc[i], title[i], price[i], description[i]);
+}  
+console.log(document.getElementById(`product0`));
+// let del = document.getElementById("delete");
+// del.onclick = function (){
+// localStorage.imgsrc[i] = null
+// }
