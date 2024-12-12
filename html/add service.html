@@ -3,55 +3,222 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>add services</title>
+    <title>Add Service / Car</title>
     <style>
-        #pname,
-#price,
-#imgsrc {
-  display: inline-flex;
-  border-radius: 8px;
-  font-family: cursive;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-body {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-#btn {
-  border-radius: 8px;
-  font-family: cursive;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-#btn:hover {
-  background: white;
-  transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-}
+      * {
+        font-family: monospace;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      nav {
+        transition: 1s;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(0, 165, 55);
+        padding: 30px;
+      }
+      /* nav ul {
+      display: none;
+    } */
+      a {
+        text-decoration: none;
+      }
+      nav ul li {
+        color: white;
+        display: block;
+        padding-left: 10px;
+        list-style-type: none;
+        padding: 5px;
+        margin-bottom: 3px;
+        transition: 1s;
+      }
+      .active {
+        background-color: white;
+        color: rgb(0, 165, 55);
+        padding: 7px;
+        border-radius: 10px;
+      }
+      li:hover {
+        background-color: white;
+        color: rgb(0, 165, 55);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      mark {
+        padding: 10px;
+        border-radius: 12px;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 5px;
+        background-color: rgb(0, 90, 30);
+      }
+      #menu {
+        display: inline;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        transition: 1s;
+        border-radius: 50%;
+        float: right;
+        background-color: white;
+        color: rgb(0, 165, 55);
+      }
+      .none {
+        display: none;
+      }
+      #disc {
+        background-color: rgb(0, 165, 55);
+        display: flex;
+        width: fit-content;
+        padding: 10px;
+        padding-left: 50px;
+        color: white;
+        position: relative;
+        margin-top: 20px;
+      }
+       #addpr {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        padding: 40px;
+        max-width: 350px;
+        margin: 100px auto;
+      }
 
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      h3 {
+        text-transform: capitalize;
+      }
+      mark {
+        background-color: rgb(0, 90, 30);
+        color: white;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 12px;
+      }
+      #Addp{
+        color: white;
+        background-color:rgb(0, 165, 55) ;
+        cursor: pointer;
+      }
+      #Addp:hover{
+background-color: rgba(0, 165, 55, 0.63);
+cursor: pointer;
+      }
+          #allp {
+      margin-top: 0px;
+      display: grid;
+      width: calc(100% - 100px);
+      /* min-height: fit-content; */
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 5%;
+      justify-content: center;
+      /* text-align: center; */
+      padding: 50px;
+    }
+    .product {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      background-color: rgb(0, 165, 55);
+      flex-direction: column;
+      border-radius: 12px;
+      padding: 10px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: inherit;
+      height: 200px;
+    }
+    #content {
+      width: 100%;
+      padding: 10px;
+      color: white;
+    }
+    #content::before {
+      content: "";
+      width: 10px;
+      height: 100%;
+      background-color: rgb(255, 255, 255);
+    }
+    #price {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
     </style>
   </head>
   <body>
-    <input type="text" placeholder="ENTER NAME HERE" id="pname" required />
-    <input type="number" placeholder="ENTER price HERE" id="price" required />
-    <input
-      type="text"
-      placeholder="ENTER IMAGE SOURCE HERE"
-      id="imgsrc"
-      required
-    />
+    <header>
+      <nav>
+        <h2><mark>Trilla</mark></h2>
+        <div>
+          <svg
+            class="w-6 h-6 text-gray-800 dark:text-white"
+            id="menu"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M18 6h-8m8 4H6m12 4h-8m8 4H6"
+            />
+          </svg>
+          <ul>
+            <a href="../index.html"><li class="active">Home</li></a>
+            <a href="../html/add service.html"><li>add your car</li></a>
+            <li>About</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <h2 id="disc">Add Service / Car</h2>
+    <form action="" id="addpr">
+      <label for="addimg">Add img Here</label>
+      <input type="url" name="addimg" id="addimg"/>
+      <label for="inptitle">Add Title Here</label>
+      <input type="text" name="" id="inptitle" placeholder="Add title" />
+      <label for="inpprice">Add Price Here</label>
+      <input type="number" name="" id="inpprice" placeholder="Add Price Here" />
+      <label for="inpprice">Add Description Here</label>
+      <input type="text" name="" id="inpdescription" placeholder="Add Description Here" />
+      <input type="submit" value="Add" id="Addp">
+    </form>
+      
+    <div id="allp"></div>
 
-    <input type="submit" value="ADD PRODUCT" id="btn" />
-    <script src="js/main.js"></script>
+    <script src="../js/add service.js"></script>
   </body>
 </html>

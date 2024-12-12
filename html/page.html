@@ -51,8 +51,9 @@
     mark {
       padding: 10px;
       border-radius: 12px;
-      text-transform: capitalize;
+      text-transform: uppercase;
       color: white;
+      letter-spacing: 5px;
       background-color: rgb(0, 90, 30);
     }
     #sec1 {
@@ -73,18 +74,18 @@
       margin-bottom: 20px;
       /* border-top-right-radius: 30%; */
     }
-    #menu{
+    #menu {
       display: inline;
       font-size: 2rem;
       cursor: pointer;
-      color:white ;
+      color: white;
       transition: 1s;
       border-radius: 50%;
       float: right;
       background-color: white;
-      color:rgb(0, 165, 55) ;
+      color: rgb(0, 165, 55);
     }
-    @media (max-width: 670px) {
+    @media (max-width: 570px) {
       /* button{
             border: none;
             color: white;
@@ -93,6 +94,9 @@
             padding: 10px;
             border-radius: 12px;
         } */
+      #allp {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
     }
     #allp {
       margin-top: 0px;
@@ -134,7 +138,7 @@
       padding: 10px;
       color: white;
     }
-    #content::before{
+    #content::before {
       content: "";
       width: 10px;
       height: 100%;
@@ -144,7 +148,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
-    footer{
+    footer {
       width: calc(100% - 140px);
       position: relative;
       bottom: 0px;
@@ -154,26 +158,43 @@
       background-color: rgb(0, 165, 55);
       color: white;
     }
-    .none{
+    .none {
       transition: 1s;
       display: none;
+    }
+    a{
+      text-decoration: none;
     }
   </style>
   <body>
     <header>
       <nav>
-        <h2><mark>T r i l l a</mark></h2>
-<div>
-          <svg class="w-6 h-6 text-gray-800 dark:text-white" id="menu" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6h-8m8 4H6m12 4h-8m8 4H6"/>
-</svg>
-        <ul>
-
-          <li class="active">Home</li>
-          <li>add your car</li>
-          <li>About</li>
-        </ul>
-</div>
+        <h2><mark>Trilla</mark></h2>
+        <div>
+          <svg
+            class="w-6 h-6 text-gray-800 dark:text-white"
+            id="menu"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M18 6h-8m8 4H6m12 4h-8m8 4H6"
+            />
+          </svg>
+          <ul>
+            <a href="../index.html"><li class="active">Home</li></a>
+            <a href="../html/add service.html"><li>add your car</li></a>
+            <li>About</li>
+          </ul>
+        </div>
       </nav>
     </header>
     <section id="sec1">

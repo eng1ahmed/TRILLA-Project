@@ -1,5 +1,4 @@
 let wellcome = document.querySelector("#wellcome");
-
 wellcome.innerHTML = `WellCome ${localStorage
   .getItem("userName")
   .toUpperCase()}`;
@@ -13,26 +12,25 @@ menu.onclick = function () {
   //  li.style.position = "absloute"
 
 };
-
-console.log(menu);
-
+let imgsrc = [localStorage.imgsrc.split(",")];
+let title = [localStorage.title.split(",")];
+let price = [localStorage.price.split(",")];
+let description = [localStorage.description.split(",")];
 class addProduct {
-  constructor(productName, price, description) {
-    let i;
+  constructor(image, productName, price, description) {
     let allproducts = document.getElementById("allp");
     let product = document.createElement("div");
     let content = document.createElement("div");
     content.id = "content";
     product.classList.add("product");
-    product.id = `product ${i}`;
+    product.id = `product `;
     allproducts.appendChild(product);
-    let img = document.createElement("img");
-    product.appendChild(img);
+    let imgg = document.createElement("img");
+    imgg.src = `${image}`;
+    product.appendChild(imgg);
     product.appendChild(content);
-    img.src =
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSap-eSqTTO2iEqPYAvkSQjYLCxmDNeG7WRg&s";
     let name = document.createElement("h2");
-    name.innerText = `Car Name :${productName}`;
+    name.innerText = `Title :${productName}`;
     content.appendChild(name);
     let p = document.createElement("h3");
     p.innerText = `Price : ${price} $`;
@@ -41,10 +39,9 @@ class addProduct {
     let descrip = document.createElement("h3");
     descrip.innerText = `Description : ${description}`;
     content.appendChild(descrip);
-    i++;
   }
 }
-
-let product1 = new addProduct("Car 1", 200, "i have good car");
-let product2 = new addProduct("Car 2", 500, "i have good car");
-let product3 = new addProduct("Car 3", 1000, "i have good car");
+let z;
+for (z = 0; z < title[0].length; z++) {
+  new addProduct(imgsrc[0][z], title[0][z], price[0][z], description[0][z]);
+}
