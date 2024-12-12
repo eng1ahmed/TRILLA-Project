@@ -4,6 +4,17 @@ wellcome.innerHTML = `WellCome ${localStorage
   .getItem("userName")
   .toUpperCase()}`;
 
+let menu = document.getElementById("menu");
+let li = document.querySelector("nav ul");
+li.classList.add("none");
+menu.onclick = function () {
+  li.classList.toggle("none");
+  //  li.style.position = "absloute"
+
+};
+
+console.log(menu);
+
 class addProduct {
   constructor(productName, price, description) {
     let i;
@@ -24,7 +35,7 @@ class addProduct {
     content.appendChild(name);
     let p = document.createElement("h3");
     p.innerText = `Price : ${price} $`;
-    p.id = "price"
+    p.id = "price";
     content.appendChild(p);
     let descrip = document.createElement("h3");
     descrip.innerText = `Description : ${description}`;
