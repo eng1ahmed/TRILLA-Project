@@ -30,8 +30,7 @@ let productPrices = localStorage.getItem("productPrices")
 let productDescriptions = localStorage.getItem("productDescriptions")
   ? JSON.parse(localStorage.getItem("productDescriptions"))
   : [];
-class addProduct {
-  constructor(image, productName, price, description) {
+function addProduct (image, productName, price, description) {
     let allproducts = document.getElementById("allp");
     let product = document.createElement("div");
     let content = document.createElement("div");
@@ -58,7 +57,6 @@ class addProduct {
     p.innerText = `Price : ${price} $`;
     descrip.innerText = `Description : ${description}`;
   }
-}
 
 // Display existing products from local storage
 for (let i = 0; i < productImages.length; i++) {
