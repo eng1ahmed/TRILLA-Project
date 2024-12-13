@@ -7,7 +7,7 @@ const phoneInput = document.getElementById("phone");
 // make action when submited
 signUpForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  if(passwordInput.value.length <= 8){
+  if(passwordInput.value.length < 8){
     alert("Please enter 8 charcter password")
   }
   else{
